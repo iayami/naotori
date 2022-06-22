@@ -7,36 +7,64 @@ module.exports = class WelcomeCard {
 		this.font = 'DEFAULT'
 	}
 
+	/**
+	 * Establece el fondo de la tarjeta de bienvenida
+	 * @param {url} value
+	 */
 	setBackground(value){
 		this.background = value
 		return this
 	}
 
+	/**
+	 * Establece el color del circulo
+	 * @param {color} value 
+	 */
 	setCircleColor(value){
 		this.circlecolor = value
 		return this
 	}
 
+	/**
+	 * Establece la imagen del miembro
+	 * @param {url} value
+	 */
 	setMemberIcon(value){
 		this.membericon = value
 		return this
 	}
 
+	/**
+	 * Establece la fuente que usarás en tu bienvenida
+	 * @param {font} value 
+	 */
 	setFont(value){
 		this.font = value
 		return this
 	}
 
+	/**
+	 * Establece el título de la bienvenida
+	 * @param {title} value 
+	 */
 	setTitle(value){
 		this.title = value
 		return this
 	}
 
+	/**
+	 * Establece la descripción de la bienvenida
+	 * @param {description} value
+	 */
 	setDescription(value){
 		this.description = value
 		return this
 	}
 
+	/**
+	 * Crea la imagen de bienvenida con los parametros que le dimos antes
+	 * @returns Buffer de la bienvenida ya creada
+	 */
 	async render(){
     if(!this.membericon) throw new Error('Debes colocar la URL del icono del miembro')
     if(!this.title) throw new Error('La bienvenida debe tener al menos el título')
